@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&gt; SoG Treasure Index</title>
+  <meta name="description" content="Searchable index of SoG custom treasure photos with tags, coordinates, and solution videos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1><span class="prompt">&gt;</span> sog_treasure<span class="cursor-blink">_</span></h1>
+    <p class="subtitle">// custom treasure photo index &mdash; click a header to sort, type to search, toggle chips to filter</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Controls">
+      <label class="search">
+        <span class="search-prefix">$</span>
+        <input
+          id="search"
+          type="search"
+          placeholder="grep id, tag, x, y..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+
+      <div class="chip-bar" id="chip-bar" role="group" aria-label="Filter by tag"></div>
+
+      <div class="status-line">
+        <span id="result-count" class="muted">loading...</span>
+      </div>
+    </section>
+
+    <section class="table-wrap" aria-label="Treasure photos">
+      <table id="treasure-table">
+        <thead>
+          <tr>
+            <th class="col-thumb">Thumbnail</th>
+            <th class="col-id sortable" data-sort="id">Photo #<span class="caret"></span></th>
+            <th class="col-tags">Tags</th>
+            <th class="col-x sortable" data-sort="x">X<span class="caret"></span></th>
+            <th class="col-y sortable" data-sort="y">Y<span class="caret"></span></th>
+            <th class="col-video">Solution</th>
+          </tr>
+        </thead>
+        <tbody id="treasure-tbody"></tbody>
+      </table>
+      <p id="empty-state" class="empty-state" hidden>// no matches</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="muted">// data: <code>data.json</code> &middot; deploy: GitHub Pages &middot; <a href="https://github.com/" target="_blank" rel="noopener noreferrer">repo</a></span>
+  </footer>
+
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="" />
+  </div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
