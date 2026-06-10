@@ -12,6 +12,9 @@
   --danger: #ff5c7a;
   --radius: 4px;
   --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --photo-crop-top: 315;
+  --photo-size: 1024;
+  --photo-visible: calc(var(--photo-size) - var(--photo-crop-top));
 }
 
 * { box-sizing: border-box; }
@@ -223,6 +226,7 @@ td.col-x, td.col-y { color: var(--text); font-variant-numeric: tabular-nums; }
   display: block;
   width: 80px;
   height: 80px;
+  margin-top: calc(-80px * var(--photo-crop-top) / var(--photo-size));
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: 3px;
@@ -307,13 +311,23 @@ td.col-x, td.col-y { color: var(--text); font-variant-numeric: tabular-nums; }
   to   { opacity: 1; }
 }
 
+.lightbox-img-wrap {
+  overflow: hidden;
+  max-width: min(100%, calc((100vh - 96px) * var(--photo-size) / var(--photo-visible)));
+  max-height: calc(100vh - 96px);
+  line-height: 0;
+  cursor: default;
+}
+
 .lightbox-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin-top: calc(-100% * var(--photo-crop-top) / var(--photo-size));
   border: 1px solid var(--border);
   box-shadow: 0 0 32px rgba(57, 255, 122, 0.18);
-  cursor: default;
 }
 
 .lightbox-close {
@@ -349,6 +363,9 @@ td.col-x, td.col-y { color: var(--text); font-variant-numeric: tabular-nums; }
   padding: 0;
   cursor: zoom-in;
   display: block;
+  overflow: hidden;
+  width: 80px;
+  height: calc(80px * var(--photo-visible) / var(--photo-size));
 }
 .thumb-btn:focus-visible {
   outline: 2px solid var(--accent);
@@ -361,5 +378,13 @@ td.col-x, td.col-y { color: var(--text); font-variant-numeric: tabular-nums; }
   .site-header h1 { font-size: 20px; }
   .container { padding: 16px 12px 40px; }
   thead th, tbody td { padding: 8px; }
-  .thumb { width: 60px; height: 60px; }
+  .thumb-btn {
+    width: 60px;
+    height: calc(60px * var(--photo-visible) / var(--photo-size));
+  }
+  .thumb {
+    width: 60px;
+    height: 60px;
+    margin-top: calc(-60px * var(--photo-crop-top) / var(--photo-size));
+  }
 }

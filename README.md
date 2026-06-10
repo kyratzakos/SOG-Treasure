@@ -19,7 +19,7 @@ All data lives in [`data.json`](data.json). Each entry:
 ```json
 {
   "id": "100",
-  "image": "model/LC_CustomTreasures_Photo100_front.png",
+  "image": "assets/images/LC_CustomTreasures_Photo100_front.png",
   "tags": ["Radio Tower", "Forest"],
   "coords": { "x": 1321, "y": 2211 },
   "video": "https://www.youtube.com/watch?v=..."
@@ -27,7 +27,7 @@ All data lives in [`data.json`](data.json). Each entry:
 ```
 
 - `id` — shown in the `Photo #` column. Must be unique.
-- `image` — path to the photo in `model/`.
+- `image` — path to the photo in `assets/images/`.
 - `tags` — any number of strings. Chips above the table are auto-built from the union of all tags.
 - `coords.x` / `coords.y` — in-game map coordinates (integers).
 - `video` — full URL to the solution video. Set to `""` to render a `—` instead.
@@ -46,4 +46,4 @@ The site will be live at `https://kyratzakos.github.io/SOG-Treasure/`.
 - `assets/styles.css` — dark / terminal theme.
 - `assets/app.js` — loads `data.json`, renders rows, handles search / tag filter / column sort.
 - `data.json` — entries.
-- `model/` — photo assets (unchanged).
+- `assets/images/` — photo assets.
