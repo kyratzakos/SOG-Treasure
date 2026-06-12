@@ -1,6 +1,6 @@
 # SoG Treasure Index
 
-Static, single-page index of custom treasure photos with tags, in-game coordinates, and links to solution videos. Plain HTML / CSS / JS — no build step.
+Static, single-page index of custom treasure photos with tags, in-game coordinates, and links to solution video with timestamp. Plain HTML / CSS / JS.
 
 ## Local preview
 
@@ -10,7 +10,7 @@ Static, single-page index of custom treasure photos with tags, in-game coordinat
 python -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then open `http://localhost:8000`.
 
 ## Editing entries
 
@@ -32,13 +32,9 @@ All data lives in [`data.json`](data.json). Each entry:
 - `coords.x` / `coords.y` — in-game map coordinates (integers).
 - `video` — full URL to the solution video. Set to `""` to render a `—` instead.
 
-The placeholder tags / coords / videos shipped in the repo are demo data — replace as needed.
-
 ## Deploying to GitHub Pages
 
-The site will be live at `https://kyratzakos.github.io/SOG-Treasure/`.
-
-`.nojekyll` is included so Pages serves files verbatim without Jekyll processing.
+The site is live at <https://kyratzakos.github.io/SOG-Treasure>.
 
 ## Files
 

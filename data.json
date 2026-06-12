@@ -235,7 +235,7 @@
     "image": "assets/images/LC_CustomTreasures_Photo310-1_front.png",
     "tags": ["Airplane", "Dud"],
     "coords": { "x": 4396, "y": 10223 },
-    "video": "#"
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "id": "400",
@@ -284,7 +284,7 @@
     "image": "assets/images/LC_CustomTreasures_Photo500_front.png",
     "tags": ["Military", "Coast", "Dud"],
     "coords": { "x": 0, "y": 0 },
-    "video": "#"
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "id": "501",
@@ -312,7 +312,7 @@
     "image": "assets/images/LC_CustomTreasures_Photo504_front.png",
     "tags": ["Ruins", "Dud"],
     "coords": { "x": 0, "y": 0 },
-    "video": "#"
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "id": "505",
